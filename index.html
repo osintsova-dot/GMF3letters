@@ -229,15 +229,15 @@ input:focus, textarea:focus, select:focus { border-color: #6C3FC5; }
 // ════════════════════════════════════════
 var UNITS = [
   {n:'St', label:'Starter', t:'Welcome to the lighthouse! — Знакомство и старт', m:'Сентябрь', L:3, v:'алфавит, числа 1–100, увлечения (I like / love / don\'t like)', g:'Do you like...? Yes, I do. / Who do you live with? / How do you spell...?'},
-  {n:'1',  label:'1',       t:'Time for school — Школа',          m:'Сентябрь', L:7, v:'места в школе и школьные предметы',                        g:'Where do you...? / I\'m brilliant at... / Are you good at...? Yes, I am.'},
-  {n:'2',  label:'2',       t:'Helping hands — Помощь по дому',   m:'Октябрь',  L:7, v:'домашние обязанности и занятия в свободное время',          g:'наречия частотности: always/often/sometimes/never + How often does...?'},
-  {n:'3',  label:'3',       t:'Fit and healthy — Здоровье',       m:'Ноябрь',   L:7, v:'проблемы со здоровьем и здоровые привычки',                g:'Has she got...? / Do they...? + must/mustn\'t для правил и советов'},
-  {n:'4',  label:'4',       t:'Creative cooking — Кулинария',     m:'Декабрь',  L:9, v:'продукты, ингредиенты и прилагательные вкуса',             g:'I\'d like some / a lot of / lots of... + I prefer / She prefers...'},
-  {n:'5',  label:'5',       t:'Under the sea — Морской мир',      m:'Январь',   L:7, v:'морские животные и описательные прилагательные',           g:'сравнительная степень: bigger than / more dangerous than'},
-  {n:'6',  label:'6',       t:'Sports mad — Спорт',               m:'Февраль',  L:7, v:'снаряжение для водного спорта и наречия образа действия',  g:'going to для планов: I\'m going to... / Are you going to...? + quickly, badly...'},
-  {n:'7',  label:'7',       t:'Detectives — Детективы',           m:'Март',     L:7, v:'предметы домашнего обихода и личные вещи',                 g:'Past Simple: was/were — утверждения, отрицания, вопросы (Was the watch...?)'},
-  {n:'8',  label:'8',       t:'What\'s on TV? — ТВ и досуг',      m:'Апрель',   L:7, v:'жанры телепередач и занятия в свободное время',            g:'Past Simple правильных глаголов: Did you...? Yes, I did. / We didn\'t...'},
-  {n:'9',  label:'9',       t:'Let\'s celebrate! — Праздники',    m:'Май',      L:11, v:'атрибуты фестивалей и время с точностью до минут',         g:'Past Simple неправильных глаголов: What did you wear? — I wore... + время'},
+  {n:'1',  label:'Unit 1',  t:'Time for school — Школа',          m:'Сентябрь', L:7, v:'места в школе и школьные предметы',                        g:'Where do you...? / I\'m brilliant at... / Are you good at...? Yes, I am.'},
+  {n:'2',  label:'Unit 2', t:'Helping hands — Помощь по дому',   m:'Октябрь',  L:7, v:'домашние обязанности и занятия в свободное время',          g:'наречия частотности: always/often/sometimes/never + How often does...?'},
+  {n:'3',  label:'Unit 3', t:'Fit and healthy — Здоровье',       m:'Ноябрь',   L:7, v:'проблемы со здоровьем и здоровые привычки',                g:'Has she got...? / Do they...? + must/mustn\'t для правил и советов'},
+  {n:'4',  label:'Unit 4', t:'Creative cooking — Кулинария',     m:'Декабрь',  L:9, v:'продукты, ингредиенты и прилагательные вкуса',             g:'I\'d like some / a lot of / lots of... + I prefer / She prefers...'},
+  {n:'5',  label:'Unit 5', t:'Under the sea — Морской мир',      m:'Январь',   L:7, v:'морские животные и описательные прилагательные',           g:'сравнительная степень: bigger than / more dangerous than'},
+  {n:'6',  label:'Unit 6', t:'Sports mad — Спорт',               m:'Февраль',  L:7, v:'снаряжение для водного спорта и наречия образа действия',  g:'going to для планов: I\'m going to... / Are you going to...? + quickly, badly...'},
+  {n:'7',  label:'Unit 7', t:'Detectives — Детективы',           m:'Март',     L:7, v:'предметы домашнего обихода и личные вещи',                 g:'Past Simple: was/were — утверждения, отрицания, вопросы (Was the watch...?)'},
+  {n:'8',  label:'Unit 8', t:'What\'s on TV? — ТВ и досуг',      m:'Апрель',   L:7, v:'жанры телепередач и занятия в свободное время',            g:'Past Simple правильных глаголов: Did you...? Yes, I did. / We didn\'t...'},
+  {n:'9',  label:'Unit 9', t:'Let\'s celebrate! — Праздники',    m:'Май',      L:11, v:'атрибуты фестивалей и время с точностью до минут',         g:'Past Simple неправильных глаголов: What did you wear? — I wore... + время'},
 ];
 
 var SL = {1:'не усвоено',2:'слабо, нужна дополнительная работа',3:'справляется с поддержкой',4:'уверенно',5:'отлично, без подсказок'};
@@ -281,7 +281,7 @@ function selUnitByIdx(i, mode, clickedBtn){
   if(clickedBtn) clickedBtn.classList.add('on');
   else document.querySelectorAll('#'+pillsId+' .pill')[i].classList.add('on');
   var u=UNITS[i];
-  document.getElementById(infoId).innerHTML='<strong>Unit '+u.label+' — '+u.t+'</strong> · '+u.m+' · '+u.L+' уроков<br>Лексика: «'+u.v+'»<br>Грамматика: «'+u.g+'»';
+  document.getElementById(infoId).innerHTML='<strong>'+u.label+' · '+u.t+'</strong> · '+u.m+' · '+u.L+' уроков<br>Лексика: «'+u.v+'»<br>Грамматика: «'+u.g+'»';
   if(mode==='group'){
     GS.ui=i;
     for(var pi=1;pi<=12;pi++){
@@ -374,7 +374,7 @@ function buildReport(name,teacher,ui,v,g,a,att,online,hw,app,ts,tt,note){
 
   return [
     '<p>Дорогие родители!</p><br>',
-    '<p>Unit '+u.label+' — <em>'+u.t+'</em> — завершён. Вот краткие итоги.</p>',
+    '<p>'+u.label+' · '+u.t+' — юнит завершён. Вот краткие итоги.</p>',
     '<p>👤 <strong>Ученик:</strong> '+name+'</p><br>',
     goodL, (goodL&&workL)?'<br>':'', workL,
     '<br>', statL, statL?'<br>':'', scaleL, '<br>',
@@ -520,7 +520,7 @@ function saveOne(){
   var idx=JSON.parse(localStorage.getItem(idxKey)||'[]');
   var entry=name+'||'+S.ui;
   if(idx.indexOf(entry)===-1){idx.push(entry);localStorage.setItem(idxKey,JSON.stringify(idx));}
-  document.getElementById('saveOneMsg').textContent='✓ Сохранено: '+name+' · Unit '+UNITS[S.ui].label;
+  document.getElementById('saveOneMsg').textContent='✓ Сохранено: '+name+' · '+UNITS[S.ui].label;
   document.getElementById('saveBtnOne').style.background='#EDE7FA';
   setTimeout(function(){document.getElementById('saveOneMsg').textContent='';document.getElementById('saveBtnOne').style.background='white';},3000);
 }
@@ -546,7 +546,7 @@ function saveGroup(){
     saved++;
   }
   var msg=document.getElementById('saveGroupMsg');
-  msg.textContent='✓ Сохранено учеников: '+saved+' · Unit '+UNITS[GS.ui].label;
+  msg.textContent='✓ Сохранено учеников: '+saved+' · '+UNITS[GS.ui].label;
   setTimeout(function(){msg.textContent='';},3000);
 }
 
@@ -605,7 +605,7 @@ function showUnitData(name,unitIdx){
   var d=JSON.parse(localStorage.getItem(key)||'null');
   if(!d){alert('Нет данных');return;}
   var u=UNITS[unitIdx];
-  var msg='Unit '+u.label+' — '+u.t+'\n'+
+  var msg=u.label+' · '+u.t+'\n'+
     'Лексика: '+d.v+'/5  Грамматика: '+d.g+'/5  Активность: '+d.a+'/5\n'+
     (d.att?'Посещаемость: '+d.att+'/'+u.L+'\n':'')+(d.hw?'ДЗ: '+d.hw+'%\n':'')+
     (d.ts?'Тест: '+d.ts+(d.tt?'/'+d.tt:'')+'\n':'')+(d.note?'Заметка: '+d.note+'\n':'')+
